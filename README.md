@@ -28,7 +28,7 @@ This project showcases my background, projects, skills, and contact information,
 - [React](https://reactjs.org/)
 - [React95](https://github.com/arturbien/React95)
 - Styled Components
-- Vite / Create React App (depending on your setup)
+- Vite / Create React App
 
 ---
 
