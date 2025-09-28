@@ -1,11 +1,8 @@
 import {
   Avatar,
-  Checkbox,
   Fieldset,
-  ProgressBar,
   Tab,
   Tabs,
-  Frame,
 } from '@react95/core';
 import me from '../assets/me.jpg';
 import back from '../assets/back_rooms.jpg';

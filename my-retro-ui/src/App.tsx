@@ -41,7 +41,7 @@ function App() {
       {!authinicated && <Login />}
 
       {authinicated && (
-        <ClippyProvider agentName={AGENTS.MERLIN}>
+        <ClippyProvider agentName={AGENTS.ROVER}>
           <BackgroundMusic />
 
           <div className="fixed">

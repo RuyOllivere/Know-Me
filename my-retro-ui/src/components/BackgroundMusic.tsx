@@ -16,7 +16,6 @@ export default function BackgroundMusic() {
       }
     };
 
-    // Toca após o primeiro clique do usuário
     window.addEventListener('click', playAudio, { once: true });
 
     return () => {
@@ -46,7 +45,7 @@ export default function BackgroundMusic() {
       <div style={{ position: 'fixed', bottom: -4, left: 60, zIndex: 999 }}>
         <Frame variant="well" style={{ padding: 6 }}>
           <Button onClick={toggleAudio}>
-            {isPlaying ? '🔊 Pause Music' : '🔇 Play Music'}
+            {isPlaying ? ' Pause Music' : ' Play Music'}
           </Button>
         </Frame>
       </div>
