@@ -8,9 +8,11 @@ import Resume from "./components/Resume";
 import Game from "./components/Game";
 import Photos from './components/Photos';
 import BackgroundMusic from './components/BackgroundMusic';
+import Calculator from './components/Calculator';
 import pic from '../public/assets/image.png';
 
 import { Amovie2, Inetcpl1313, Joy102, Wordpad, Mail } from "@react95/icons";
+// Inetcpl1313, 
 import { Video } from "@react95/core";
 
 import logo from './logo.png';
@@ -86,6 +88,14 @@ function App() {
               name="Contact"
             >
               <Contact />
+            </DesktopIcon>
+
+            <DesktopIcon
+              width={400}
+              icon={<Inetcpl1313 variant="32x32_4" />}
+              name="Calculator"
+            >
+              <Calculator/>
             </DesktopIcon>
 
             <a href="https://www.instagram.com/portraitaway">

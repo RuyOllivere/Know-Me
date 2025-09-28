@@ -1,0 +1,122 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root{
+    --primary-color: #fae6f3;
+    --secondary-color: #f0f0f0;
+    --text-color: #333;
+    --button-color: #fff;
+    --button-hover-color: #e0e0e0;
+    --button-active-color: #d0d0d0;
+}
+
+.calculator{
+    width: auto;
+    height: auto;
+    max-height: 1000px;
+    max-width: 1000px;
+    height: auto;
+    background-color: var(--primary-color);
+    /* #e7e7e7 cinza */
+    border: 1px solid #ccc;
+    border-radius: 40px;
+    padding: 20px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.363);
+
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.calculator-body{
+    display: inline-block;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    width: auto;
+
+    /* margin-left: 18.4px; */
+}
+
+.btn-container{
+    width: 300px;
+    height: 200px;
+    margin-bottom: 140px;
+}
+
+.calculator-header{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.btn{
+    width: 60px;
+    height: 60px;
+    background-color: #fff;
+    border: none;
+    border-radius: 50%;
+    font-size: 24px;
+    color: #333;
+    margin: 5px;
+    cursor: pointer;
+
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.308);
+
+    transition: .2s;
+}
+
+.e{
+    opacity: 0;
+    cursor: default;
+}
+
+.clear{
+    background-color: #ff6666;
+    color: white;
+}
+
+.clear:hover{
+    background-color: #ff4d4d;
+}
+
+.btn:hover{
+    background-color: #e0e0e0;
+    width: 59px;
+    height: 59px;
+}
+
+.btn:active{
+    background-color: #d0d0d0;
+    width: 58px;
+    height: 58px;
+}
+
+.calculator-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  background-image: 
+    linear-gradient(to bottom right, #ff7fd957, #c434fd5d),
+    url(../assets/images/fundo-feminino-de-padrao-sem-costura-de-sakura-rosa-com-flores-brancas-textura-simples-e-fofa-com-petalas-e-flor_511660-1085.png);
+}
+
+
+#input-text{
+    width: 300px;
+    height: 60px;
+    font-size: 32px;
+    border: 1px solid #ccc;
+    border-radius: 24px;
+
+    padding: 10px;
+}
+
+/* display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-left: 0; */
