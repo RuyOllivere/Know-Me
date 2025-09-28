@@ -8,6 +8,7 @@ import Resume from "./components/Resume";
 import Game from "./components/Game";
 import Photos from './components/Photos';
 import BackgroundMusic from './components/BackgroundMusic';
+import pic from '../public/assets/image.png';
 
 import { Amovie2, Inetcpl1313, Joy102, Wordpad, Mail } from "@react95/icons";
 import { Video } from "@react95/core";
@@ -16,6 +17,10 @@ import logo from './logo.png';
 
 function App() {
   const authinicated = useAuth((state) => state.authinicated);
+
+  const CustomIcon = () => (
+    <img src={pic} alt="Custom Icon" style={{ width: 32, height: 32 }} />
+  );
 
   return (
     <div
@@ -82,6 +87,17 @@ function App() {
             >
               <Contact />
             </DesktopIcon>
+
+            <a href="https://www.instagram.com/portraitaway">
+              <DesktopIcon
+                width={400}
+                height={400}
+                icon={<CustomIcon/>}
+                name="Instagram"
+                children = {null}
+              >
+              </DesktopIcon>
+            </a>
           </div>
 
           <WindowBar />

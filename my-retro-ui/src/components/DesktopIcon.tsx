@@ -1,9 +1,7 @@
-// DesktopIcon.js
 import React, { type ReactElement, type ReactNode,type ComponentType } from "react";
 import { Modal, TitleBar, useModal } from "@react95/core";
 import { useWindowsStore } from "../store/windows";
 
-// Centralized style objects for maintainability and clarity
 const styles = {
   desktopIcon: {
     alignItems: "center",
