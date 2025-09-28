@@ -11,7 +11,7 @@ import BackgroundMusic from './components/BackgroundMusic';
 import Calculator from './components/Calculator';
 import pic from '../public/assets/image.png';
 
-import { Amovie2, Inetcpl1313, Joy102, Wordpad, Mail } from "@react95/icons";
+import { Amovie2, CalcSc, Plugin, Joy102, Wordpad, Mail } from "@react95/icons";
 // Inetcpl1313, 
 import { Video } from "@react95/core";
 
@@ -57,9 +57,9 @@ function App() {
             </DesktopIcon>
 
             <DesktopIcon
-              width={600}
-              height={400}
-              icon={<Inetcpl1313 variant="32x32_4" />}
+              width={900}
+              height={900}
+              icon={<Plugin variant="32x32_4" />}
               name="Photos"
             >
               <Photos />
@@ -92,7 +92,7 @@ function App() {
 
             <DesktopIcon
               width={400}
-              icon={<Inetcpl1313 variant="32x32_4" />}
+              icon={<CalcSc variant="32x32_4" />}
               name="Calculator"
             >
               <Calculator/>

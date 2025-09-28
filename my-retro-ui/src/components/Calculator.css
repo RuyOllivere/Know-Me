@@ -100,8 +100,7 @@
   align-items: center;
   height: 100%;
   background-image: 
-    linear-gradient(to bottom right, #ff7fd957, #c434fd5d),
-    url(../assets/images/fundo-feminino-de-padrao-sem-costura-de-sakura-rosa-com-flores-brancas-textura-simples-e-fofa-com-petalas-e-flor_511660-1085.png);
+    linear-gradient(to bottom right, #ff7fd957, #c434fd5d);
 }
 
 
