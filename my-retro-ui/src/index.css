@@ -1,0 +1,76 @@
+*{
+    user-select: none;
+}
+/* === Display === */
+.hidden               { display: none; }
+.block                { display: block; }
+.inline-block         { display: inline-block; }
+.inline               { display: inline; }
+.flex                 { display: flex; }
+.inline-flex          { display: inline-flex; }
+.grid                 { display: grid; }
+.inline-grid          { display: inline-grid; }
+.contents             { display: contents; }
+.table                { display: table; }
+
+/* === Position === */
+.static               { position: static; }
+.relative             { position: relative; }
+.absolute             { position: absolute; }
+.fixed                { position: fixed; }
+.sticky               { position: sticky; }
+
+/* === Top / Right / Bottom / Left === */
+.top-0                { top: 0px; }
+.right-0              { right: 0px; }
+.bottom-0             { bottom: 0px; }
+.left-0               { left: 0px; }
+
+.inset-0              { top: 0; right: 0; bottom: 0; left: 0; }
+.inset-x-0            { left: 0; right: 0; }
+.inset-y-0            { top: 0; bottom: 0; }
+
+.top-half              { top: 50% !important; }
+.left-half          { left: 50% !important; }
+
+.-translate-x-half     { transform: translateX(-50%) !important; }
+.-translate-y-half     { transform: translateY(-50%) !important; }
+.translate  {translate: -50%;}
+.translate-x-full     { transform: translateX(100%); }
+.translate-y-full     { transform: translateY(100%); }
+
+/* === Z-Index === */
+.z-0                  { z-index: 0; }
+.z-10                 { z-index: 10; }
+.z-20                 { z-index: 20; }
+.z-30                 { z-index: 30; }
+.z-40                 { z-index: 40; }
+.z-50                 { z-index: 50; }
+.z-auto               { z-index: auto; }
+
+/* === Flex Utilities (for layout) === */
+.flex-row             { flex-direction: row; }
+.flex-col             { flex-direction: column; }
+.items-center         { align-items: center; }
+.justify-center       { justify-content: center; }
+.justify-between      { justify-content: space-between; }
+.justify-around       { justify-content: space-around; }
+.justify-end          { justify-content: flex-end; }
+
+/* === Align (vertical alignment for inline elements) === */
+.align-top            { vertical-align: top; }
+.align-middle         { vertical-align: middle; }
+.align-bottom         { vertical-align: bottom; }
+
+
+.gap-0                { gap: 0px; }
+.gap-1                { gap: 0.25rem; /* 4px */ }
+.gap-2                { gap: 0.5rem;  /* 8px */ }
+.gap-3                { gap: 0.75rem; /* 12px */ }
+.gap-4                { gap: 1rem;    /* 16px */ }
+.gap-6                { gap: 1.5rem;  /* 24px */ }
+.gap-8                { gap: 2rem;    /* 32px */ }
+.gap-10               { gap: 2.5rem;  /* 40px */ }
+
+.gap-x-4              { column-gap: 1rem; }
+.gap-y-4              { row-gap: 1rem; }
