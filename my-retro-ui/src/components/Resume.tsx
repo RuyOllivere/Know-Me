@@ -11,7 +11,7 @@ function Resume() {
           size="140px"
         />
         <p>
-          I'm a passionate Computer Science (And hobby photographer, but that's a secret Shhhh!!!) student eager to learn and grow in the software development world.
+          I'm a passionate Computer Science and system developer in Senac (And hobby photographer, but that's a secret Shhhh!!!) student eager to learn and grow in the software development world.
           Currently looking for internship opportunities to apply my skills and contribute to real-world projects.
         </p>
         <Fieldset legend="My Journey">
