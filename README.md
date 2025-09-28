@@ -19,7 +19,7 @@ This project showcases my background, projects, skills, and contact information,
 
 ## 📸 Preview
 
-![Home Screen](./screenshot.png)
+![Home Screen](my-retro-ui/screenshot.png)
 
 ---
 
@@ -28,7 +28,7 @@ This project showcases my background, projects, skills, and contact information,
 - [React](https://reactjs.org/)
 - [React95](https://github.com/arturbien/React95)
 - Styled Components
-- Vite / Create React App (depending on your setup)
+- Vite / Create React App
 
 ---
 
@@ -36,10 +36,10 @@ This project showcases my background, projects, skills, and contact information,
 
 ```bash
 # Clone the repo
-git clone https://github.com/yourusername/react95-portfolio.git
+git clone https://github.com/RuyOllivere/Know-Me.git
 
 # Navigate into the folder
-cd react95-portfolio
+cd Know-Me
 
 # Install dependencies
 npm install
