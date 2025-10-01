@@ -6,7 +6,7 @@ function Game() {
   const chessGameRef = useRef(new Chess());
   const chessGame = chessGameRef.current;
 
-  // track the current position of the chess game in state to trigger a re-render of the chessboard
+  // track the current position of the chess game in state to trigger a re-render of the chessboard - Random move
   const [chessPosition, setChessPosition] = useState(chessGame.fen());
 
   // make a random "CPU" move
