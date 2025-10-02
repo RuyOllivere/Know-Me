@@ -1,6 +1,6 @@
 import { Frame } from "@react95/core";
 import { useState } from "react";
-import "./calculator.css";
+import "./Calculator.css";
 
 const Calculator = () => {
   const [input, setInput] = useState("");
