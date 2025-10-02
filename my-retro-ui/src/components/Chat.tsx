@@ -7,19 +7,17 @@ interface ChatProps {
   onClose?: () => void;
 }
 
-const socket = io('http://localhost:3001'); // URL do seu backend
+const socket = io('http://localhost:3001');
 
 const Chat: FC<ChatProps> = ({ onClose }) => {
   const [message, setMessage] = useState('');
   const [messages, setMessages] = useState<string[]>([]);
 
   useEffect(() => {
-    // Quando receber mensagem do servidor
     socket.on('chat message', (msg: string) => {
       setMessages((prev) => [...prev, msg]);
     });
 
-    // Cleanup para evitar múltiplos listeners
     return () => {
       socket.off('chat message');
     };
@@ -27,8 +25,8 @@ const Chat: FC<ChatProps> = ({ onClose }) => {
 
   const handleSend = () => {
     if (message.trim()) {
-      socket.emit('chat message', message); // Envia para o servidor
-      setMessage(''); // Limpa input
+      socket.emit('chat message', message);
+      setMessage('');
     }
   };
 
