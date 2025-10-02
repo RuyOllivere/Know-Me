@@ -2,7 +2,7 @@
 
 Welcome to my personal portfolio built using [React95](https://github.com/arturbien/React95) — a stylish React component library with Windows 95 UI vibes! 🎉
 
-This project showcases my background, projects, skills, and contact information, all wrapped in a nostalgic retro interface.
+This project showcases my background, projects, skills, and contact information, all wrapped in a nostalgic retro interface, and you can check it [right here](HTTPS://portos.page.gd).
 
 ---
 
