@@ -10,8 +10,9 @@ import Photos from './components/Photos';
 import BackgroundMusic from './components/BackgroundMusic';
 import Calculator from './components/Calculator';
 import pic from '../public/assets/image.png';
+import Chat from './components/Chat';
 
-import { Amovie2, CalcSc, Plugin, Joy102, Wordpad, Mail } from "@react95/icons";
+import { Amovie2, CalcSc, Plugin, Joy102, Wordpad, Mail, Star } from "@react95/icons";
 // Inetcpl1313, 
 import { Video } from "@react95/core";
 
@@ -96,6 +97,15 @@ function App() {
               name="Calculator"
             >
               <Calculator/>
+            </DesktopIcon>
+
+            
+            <DesktopIcon
+              width={400}
+              icon={<Star variant="32x32_4" />}
+              name="Chat.exe"
+            >
+              <Chat />
             </DesktopIcon>
 
             <a href="https://www.instagram.com/portraitaway">
