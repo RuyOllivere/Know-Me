@@ -1,13 +1,14 @@
 // components/Chat.tsx
 import { Frame, Button } from '@react95/core';
-import { FC, useEffect, useState } from 'react';
+import type { FC } from 'react';
+import { useEffect, useState } from 'react';
 import io from 'socket.io-client';
 
 interface ChatProps {
   onClose?: () => void;
 }
 
-const socket = io('http://localhost:3001');
+const socket = io(); //Connects to the server
 
 const Chat: FC<ChatProps> = ({ onClose }) => {
   const [message, setMessage] = useState('');
