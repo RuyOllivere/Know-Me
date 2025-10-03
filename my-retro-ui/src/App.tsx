@@ -78,7 +78,7 @@ function App() {
               width={400}
               height={400}
               icon={<Joy102 variant="32x32_4" />}
-              name="Game"
+              name="Chess.exe"
             >
               <Game />
             </DesktopIcon>

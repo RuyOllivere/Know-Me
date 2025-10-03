@@ -8,7 +8,7 @@ interface ChatProps {
   onClose?: () => void;
 }
 
-const socket = io("https://know-me-vert.vercel.app/index.cjs"); //Connects to the server
+const socket = io(); //Connects to the server
 
 const Chat: FC<ChatProps> = ({ onClose }) => {
   const [message, setMessage] = useState('');
