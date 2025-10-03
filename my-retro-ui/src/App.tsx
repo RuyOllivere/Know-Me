@@ -16,7 +16,7 @@ import { Amovie2, CalcSc, Plugin, Joy102, Wordpad, Mail, Star } from "@react95/i
 // Inetcpl1313, 
 import { Video } from "@react95/core";
 
-import logo from './logo.png';
+import logo from './buda.png';
 
 function App() {
   const authinicated = useAuth((state) => state.authinicated);
