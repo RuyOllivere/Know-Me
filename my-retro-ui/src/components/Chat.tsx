@@ -8,7 +8,7 @@ interface ChatProps {
   onClose?: () => void;
 }
 
-const socket = io(); //Connects to the server
+const socket = io("chat-server-production-f5f9.up.railway.app"); //Connects to the server
 
 const Chat: FC<ChatProps> = ({ onClose }) => {
   const [message, setMessage] = useState('');
