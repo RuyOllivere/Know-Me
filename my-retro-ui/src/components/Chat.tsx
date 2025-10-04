@@ -47,7 +47,6 @@ const Chat: FC<ChatProps> = ({ onClose }) => {
         minWidth: 320,
         position: 'relative',
         height: '300px',
-        overflowY: 'auto',
         display: 'flex',
         flexDirection: 'column',
       }}
