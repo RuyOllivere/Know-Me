@@ -1,18 +1,19 @@
-// components/Chat.tsx
 import { Frame, Button } from '@react95/core';
 import type { FC } from 'react';
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useRef } from 'react';
 import io from 'socket.io-client';
 
 interface ChatProps {
   onClose?: () => void;
 }
 
-const socket = io("https://chat-server-production-f5f9.up.railway.app"); //Connects to the server
+const socket = io("https://chat-server-production-f5f9.up.railway.app");
 
 const Chat: FC<ChatProps> = ({ onClose }) => {
   const [message, setMessage] = useState('');
   const [messages, setMessages] = useState<string[]>([]);
+
+  const messagesEndRef = useRef<HTMLDivElement | null>(null);
 
   useEffect(() => {
     socket.on('chat message', (msg: string) => {
@@ -23,6 +24,12 @@ const Chat: FC<ChatProps> = ({ onClose }) => {
       socket.off('chat message');
     };
   }, []);
+
+  useEffect(() => {
+    if (messagesEndRef.current) {
+      messagesEndRef.current.scrollIntoView({ behavior: 'smooth' });
+    }
+  }, [messages]);
 
   const handleSend = () => {
     if (message.trim()) {
@@ -74,6 +81,8 @@ const Chat: FC<ChatProps> = ({ onClose }) => {
           flex: 1,
           overflowY: 'auto',
           marginBottom: 10,
+          display: 'flex',
+          flexDirection: 'column',
         }}
       >
         {messages.map((msg, index) => (
@@ -91,6 +100,7 @@ const Chat: FC<ChatProps> = ({ onClose }) => {
             {msg}
           </div>
         ))}
+        <div ref={messagesEndRef} />
       </div>
 
       <div style={{ display: 'flex', gap: 8 }}>
@@ -98,6 +108,12 @@ const Chat: FC<ChatProps> = ({ onClose }) => {
           type="text"
           value={message}
           onChange={(e) => setMessage(e.target.value)}
+          onKeyDown={(e) => {
+            if (e.key === 'Enter') {
+              e.preventDefault();
+              handleSend();
+            }
+          }}
           placeholder="Type a message..."
           style={{
             flex: 1,
