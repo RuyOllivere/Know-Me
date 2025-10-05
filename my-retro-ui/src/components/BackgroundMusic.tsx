@@ -42,7 +42,7 @@ export default function BackgroundMusic() {
         Your browser does not support the audio element.
       </audio>
 
-      <div style={{ position: 'fixed', bottom: -4, left: 60, zIndex: 999 }}>
+      <div style={{ position: 'fixed', bottom: 10, left: 60, zIndex: 999 }}>
         <Frame variant="well" style={{ padding: 6 }}>
           <Button onClick={toggleAudio}>
             {isPlaying ? ' Pause Music' : ' Play Music'}
