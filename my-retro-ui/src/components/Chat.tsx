@@ -2,28 +2,55 @@ import { Frame, Button } from '@react95/core';
 import type { FC } from 'react';
 import { useEffect, useState, useRef } from 'react';
 import io from 'socket.io-client';
+import { useAuth } from '../store/auth'; // ajuste o caminho conforme seu projeto
 
 interface ChatProps {
   onClose?: () => void;
 }
 
-const socket = io("https://chat-server-production-f5f9.up.railway.app");
+interface ChatMessage {
+  nickname: string;
+  color: string;
+  text: string;
+}
+
+interface UserInfo {
+  nickname: string;
+  color: string;
+}
+
+const socket = io("https://chat-server-production-f5f9.up.railway.app/");
+
+const generateRandomColor = () =>
+  `hsl(${Math.floor(Math.random() * 360)}, 70%, 50%)`;
 
 const Chat: FC<ChatProps> = ({ onClose }) => {
   const [message, setMessage] = useState('');
-  const [messages, setMessages] = useState<string[]>([]);
+  const [messages, setMessages] = useState<ChatMessage[]>([]);
+  const [connectedUsers, setConnectedUsers] = useState<UserInfo[]>([]);
+
+  const nickname = useAuth((state) => state.nickname);
+
+  const [userColor] = useState(() => generateRandomColor());
 
   const messagesEndRef = useRef<HTMLDivElement | null>(null);
 
   useEffect(() => {
-    socket.on('chat message', (msg: string) => {
+    socket.emit('user info', { nickname, color: userColor });
+
+    socket.on('chat message', (msg: ChatMessage) => {
       setMessages((prev) => [...prev, msg]);
+    });
+
+    socket.on('users update', (users: UserInfo[]) => {
+      setConnectedUsers(users);
     });
 
     return () => {
       socket.off('chat message');
+      socket.off('users update');
     };
-  }, []);
+  }, [nickname, userColor]);
 
   useEffect(() => {
     if (messagesEndRef.current) {
@@ -33,7 +60,13 @@ const Chat: FC<ChatProps> = ({ onClose }) => {
 
   const handleSend = () => {
     if (message.trim()) {
-      socket.emit('chat message', message);
+      const newMessage: ChatMessage = {
+        nickname,
+        color: userColor,
+        text: message,
+      };
+
+      socket.emit('chat message', newMessage);
       setMessage('');
     }
   };
@@ -46,7 +79,7 @@ const Chat: FC<ChatProps> = ({ onClose }) => {
         padding: 24,
         minWidth: 320,
         position: 'relative',
-        height: '300px',
+        height: '350px',
         display: 'flex',
         flexDirection: 'column',
       }}
@@ -72,6 +105,32 @@ const Chat: FC<ChatProps> = ({ onClose }) => {
         {onClose && <Button onClick={onClose}>X</Button>}
       </div>
 
+      {/* Connected users */}
+      <div
+        style={{
+          fontFamily: 'MS Sans Serif',
+          fontSize: 12,
+          color: '#222',
+          marginBottom: 12,
+          border: '1px solid #ccc',
+          padding: 8,
+          borderRadius: 4,
+          maxHeight: 80,
+          overflowY: 'auto',
+          backgroundColor: '#f9f9f9',
+        }}
+      >
+        <strong>Usuários conectados:</strong>
+        <ul style={{ margin: 0, paddingLeft: 20 }}>
+          {connectedUsers.map((user, i) => (
+            <li key={i} style={{ color: user.color }}>
+              {user.nickname}
+            </li>
+          ))}
+        </ul>
+      </div>
+
+      {/* Message area */}
       <div
         style={{
           fontFamily: 'MS Sans Serif',
@@ -96,12 +155,14 @@ const Chat: FC<ChatProps> = ({ onClose }) => {
               maxWidth: '80%',
             }}
           >
-            {msg}
+            <strong style={{ color: msg.color }}>{msg.nickname}:</strong>{' '}
+            {msg.text}
           </div>
         ))}
         <div ref={messagesEndRef} />
       </div>
 
+      {/* Msg input */}
       <div style={{ display: 'flex', gap: 8 }}>
         <input
           type="text"

@@ -1,13 +1,15 @@
 import { create } from "zustand";
 
-interface AuthState{
-    authinicated: boolean;
-    login: ()=> void;
-    logout: ()=> void;
+interface AuthState {
+  authinicated: boolean;
+  nickname: string;
+  login: (nickname: string) => void;
+  logout: () => void;
 }
 
-export const useAuth = create<AuthState>((set)=>({
-    authinicated: false,
-    login:()=>set({authinicated:true}),
-    logout:()=>set({authinicated:false})
-}))
+export const useAuth = create<AuthState>((set) => ({
+  authinicated: false,
+  nickname: "",
+  login: (nickname: string) => set({ authinicated: true, nickname }),
+  logout: () => set({ authinicated: false, nickname: "" }),
+}));
