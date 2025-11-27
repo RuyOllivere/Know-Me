@@ -19,7 +19,7 @@ interface UserInfo {
   color: string;
 }
 
-const socket = io("https://chat-server-ten-iota.vercel.app/");
+const socket = io("https://chat-server-ten-knm.vercel.app/");
 
 const generateRandomColor = () =>
   `hsl(${Math.floor(Math.random() * 360)}, 70%, 50%)`;
